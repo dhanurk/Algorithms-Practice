@@ -1,4 +1,4 @@
-// knapsack problem using top down dynamic programming approach.
+// knapsack problem using top down recursive programming approach.
 #include <stdio.h>
 #include <stdlib.h>
 
