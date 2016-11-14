@@ -1,4 +1,5 @@
 // knapsack problem using top down recursive programming approach.
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,7 +20,7 @@ int main(){
   printf("Enter knapsack capacity: ");
   scanf("%d", &capacity);
   int ans = 0;
-  ans = knapsack(capacity, size - 1, weight, value);
+  ans = knapsack(capacity, size, weight, value);
   printf("Maximum value of knapsack for the given capacity is: %d\n", ans);
   printf("Press enter to exit.\n");
   char b;
@@ -34,7 +35,7 @@ int max(int a, int b) {
 int knapsack(int capacity, int size, int *weight, int *value) {
   if(size == 0 || weight == 0)
     return 0;
-  if(capacity - weight[size] < 0)
+  if(capacity - weight[size - 1] < 0)
     return knapsack(capacity, size - 1, weight, value);
-  return(max(knapsack(capacity, size - 1, weight, value), value[size] + knapsack(capacity - weight[size], size - 1, weight, value)));
+  return(max(knapsack(capacity, size - 1, weight, value), value[size - 1] + knapsack(capacity - weight[size - 1], size - 1, weight, value)));
 }
