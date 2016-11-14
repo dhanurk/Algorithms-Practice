@@ -1,3 +1,4 @@
+// knapsack problem using top down dynamic programming approach.
 #include <stdio.h>
 #include <stdlib.h>
 
